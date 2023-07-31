@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-48d595fb","path":"/v2/introduction/","title":"前言","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1690784465000,"contributors":[{"name":"周龙龙","email":"97045924@qq.com","commits":1}]},"filePathRelative":"v2/introduction/index.md"}');export{t as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-8daa1a0e","path":"/","title":"","lang":"en-US","frontmatter":{},"headers":[{"level":2,"title":"前言","slug":"前言","link":"#前言","children":[]}],"git":{"updatedTime":1690784465000,"contributors":[{"name":"周龙龙","email":"97045924@qq.com","commits":1}]},"filePathRelative":"README.md"}');export{e as data};
