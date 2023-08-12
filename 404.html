@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.66">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <meta name="theme-color" content="#3eaf7c"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png"><link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c"><meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png"><meta name="msapplication-TileColor" content="#000000"><title>Vue.js 技术</title><meta name="description" content="Analysis vue.js ">
+    <link rel="preload" href="/vue-note/assets/style-36f346cd.css" as="style"><link rel="stylesheet" href="/vue-note/assets/style-36f346cd.css">
+    <link rel="modulepreload" href="/vue-note/assets/app-bac77e8c.js"><link rel="modulepreload" href="/vue-note/assets/404.html-eeac4196.js"><link rel="modulepreload" href="/vue-note/assets/404.html-60b35caa.js"><link rel="prefetch" href="/vue-note/assets/index.html-ee8368bb.js" as="script"><link rel="prefetch" href="/vue-note/assets/build.html-9b887612.js" as="script"><link rel="prefetch" href="/vue-note/assets/directory.html-d361bdac.js" as="script"><link rel="prefetch" href="/vue-note/assets/index.html-a2009672.js" as="script"><link rel="prefetch" href="/vue-note/assets/compiler.html-1ac18c6f.js" as="script"><link rel="prefetch" href="/vue-note/assets/generate.html-50664f53.js" as="script"><link rel="prefetch" href="/vue-note/assets/index.html-83733602.js" as="script"><link rel="prefetch" href="/vue-note/assets/optimize.html-8057b71f.js" as="script"><link rel="prefetch" href="/vue-note/assets/parse.html-ffd11c4f.js" as="script"><link rel="prefetch" href="/vue-note/assets/dep.html-69255913.js" as="script"><link rel="prefetch" href="/vue-note/assets/index.html-143ab421.js" as="script"><link rel="prefetch" href="/vue-note/assets/new-vue.html-a8c2f5d3.js" as="script"><link rel="prefetch" href="/vue-note/assets/observe.html-2674fe9c.js" as="script"><link rel="prefetch" href="/vue-note/assets/watcher.html-0602b7b9.js" as="script"><link rel="prefetch" href="/vue-note/assets/index.html-bcec9263.js" as="script"><link rel="prefetch" href="/vue-note/assets/build.html-8159f435.js" as="script"><link rel="prefetch" href="/vue-note/assets/directory.html-975071b0.js" as="script"><link rel="prefetch" href="/vue-note/assets/index.html-9b7634fe.js" as="script"><link rel="prefetch" href="/vue-note/assets/compiler.html-a104e801.js" as="script"><link rel="prefetch" href="/vue-note/assets/destroy.html-ab722b09.js" as="script"><link rel="prefetch" href="/vue-note/assets/index.html-a793cf07.js" as="script"><link rel="prefetch" href="/vue-note/assets/init.html-0c72fc94.js" as="script"><link rel="prefetch" href="/vue-note/assets/mounted.html-aa1bfced.js" as="script"><link rel="prefetch" href="/vue-note/assets/prepare-init.html-30407bdc.js" as="script"><link rel="prefetch" href="/vue-note/assets/index.html-c9c0e5a4.js" as="script"><link rel="prefetch" href="/vue-note/assets/build.html-56c12800.js" as="script"><link rel="prefetch" href="/vue-note/assets/directory.html-bd3a19b0.js" as="script"><link rel="prefetch" href="/vue-note/assets/index.html-34b09489.js" as="script"><link rel="prefetch" href="/vue-note/assets/compiler.html-f1e4e6ac.js" as="script"><link rel="prefetch" href="/vue-note/assets/generate.html-b41bfc93.js" as="script"><link rel="prefetch" href="/vue-note/assets/index.html-4e6f7315.js" as="script"><link rel="prefetch" href="/vue-note/assets/optimize.html-5e659bce.js" as="script"><link rel="prefetch" href="/vue-note/assets/parse.html-4ec6aee7.js" as="script"><link rel="prefetch" href="/vue-note/assets/dep.html-e2eb3f4f.js" as="script"><link rel="prefetch" href="/vue-note/assets/index.html-74273928.js" as="script"><link rel="prefetch" href="/vue-note/assets/new-vue.html-32642e71.js" as="script"><link rel="prefetch" href="/vue-note/assets/observe.html-2a1bbae6.js" as="script"><link rel="prefetch" href="/vue-note/assets/watcher.html-18eca8b8.js" as="script"><link rel="prefetch" href="/vue-note/assets/index.html-c5eff758.js" as="script"><link rel="prefetch" href="/vue-note/assets/build.html-569a82b8.js" as="script"><link rel="prefetch" href="/vue-note/assets/directory.html-765e31cd.js" as="script"><link rel="prefetch" href="/vue-note/assets/index.html-94547d85.js" as="script"><link rel="prefetch" href="/vue-note/assets/compiler.html-a3dc4412.js" as="script"><link rel="prefetch" href="/vue-note/assets/destroy.html-f11cf909.js" as="script"><link rel="prefetch" href="/vue-note/assets/index.html-8ef3dd27.js" as="script"><link rel="prefetch" href="/vue-note/assets/init.html-fd613036.js" as="script"><link rel="prefetch" href="/vue-note/assets/mounted.html-557212af.js" as="script"><link rel="prefetch" href="/vue-note/assets/prepare-init.html-91180b89.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>There&#39;s nothing here.</blockquote><a href="/vue-note/" class="">Take me home</a></div></main></div><!----><!--]--></div>
+    <script type="module" src="/vue-note/assets/app-bac77e8c.js" defer></script>
+  </body>
+</html>
