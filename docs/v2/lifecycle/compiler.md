@@ -67,3 +67,68 @@ new Vue({
 ```html
 <div>hello world</div>
 ```
+
+## 模版编译分析
+
+platform 目录下的 web 是 rollup 打包入口的文件。给 Vue 提供了挂载 DOM 的方法。
+
+entry-runtime-with-compiler.js 是完整版打包入口文件。
+
+```js
+import Vue from "./runtime/index.js";
+
+// 缓存mount方法;
+const mount = Vue.prototype.$mount;
+Vue.prototype.$mount = function (el, hydrating) {
+  el = el && query(el);
+  const options = this.$options;
+  // resolve template/el and convert to render function
+  if (!options.render) {
+    let template = options.template;
+    if (template) {
+      if (typeof template === "string") {
+        if (template.charAt(0) === "#") {
+          template = idToTemplate(template);
+        }
+      } else if (template.nodeType) {
+        template = template.innerHTML;
+      } else {
+        if (process.env.NODE_ENV !== "production") {
+          warn("invalid template option:" + template, this);
+        }
+        return this;
+      }
+    } else if (el) {
+      template = getOuterHTML(el);
+    }
+    if (template) {
+      const { render, staticRenderFns } = compileToFunctions(
+        template,
+        {
+          outputSourceRange: process.env.NODE_ENV !== "production",
+          shouldDecodeNewlines,
+          shouldDecodeNewlinesForHref,
+          delimiters: options.delimiters,
+          comments: options.comments,
+        },
+        this
+      );
+      options.render = render;
+      options.staticRenderFns = staticRenderFns;
+  }
+  return mount.call(this, el, hydrating);
+};
+
+```
+
+```js
+// public mount method
+Vue.prototype.$mount = function (el, hydrating) {
+  el = el && inBrowser ? query(el) : undefined;
+  return mountComponent(this, el, hydrating);
+};
+```
+
+## 总结
+
+\$mount 挂载时会查看选项 options 中是否有 render 方法，如果有的挂直接调用 mount 方法挂载模版。如果没有 render 方法，则要把 调用 compileToFunction (template, {}, this),把模版和当前实例作为参数，返回 render 方法，和 staticRenderFuns。然后开始挂载模版 mountComponent。

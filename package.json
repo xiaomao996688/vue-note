@@ -7,7 +7,7 @@
     "docs:build": "vuepress build docs"
   },
   "repository": "git@github.com:xiaomao996688/vue-note.git",
-  "author": "周龙龙 <97045924@qq.com>",
+  "author": "zll <97045924@qq.com>",
   "license": "MIT",
   "devDependencies": {
     "vuepress": "^2.0.0-beta.66"

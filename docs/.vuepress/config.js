@@ -3,7 +3,7 @@ export default {
   base: "/vue-note/",
   dest: "dist",
   title: "Vue.js 技术",
-  description: "Analysis vue.js deeply",
+  description: "Analysis vue.js ",
   head: [
     // ["link", { rel: "icon", href: `/logo.png` }],
     // ["link", { rel: "manifest", href: "/manifest.json" }],
@@ -36,11 +36,12 @@ export default {
   ],
   serviceWorker: false,
   theme: defaultTheme({
-    repo: "",
-    editLinks: true,
+    docsRepo: "https://github.com/xiaomao996688/vue-note",
+    // editLinks: false,
     docsDir: "docs",
     editLinkText: "在 GitHub 上编辑此页",
     lastUpdated: "上次更新",
+    contributors: false,
     navbar: [
       {
         text: "2.x 版本",
@@ -49,6 +50,10 @@ export default {
       {
         text: "3.x 版本",
         link: "/v3/introduction/",
+      },
+      {
+        text: "Github",
+        link: "/",
       },
     ],
     sidebar: {
@@ -70,6 +75,8 @@ export default {
             "/v2/lifecycle/prepare-init.md",
             "/v2/lifecycle/init.md",
             "/v2/lifecycle/compiler.md",
+            "/v2/lifecycle/mounted.md",
+            "/v2/lifecycle/destroy.md",
           ],
         },
         {
@@ -77,13 +84,27 @@ export default {
           collapsable: false,
           children: [
             "/v2/data-driven/index.md",
-            "data-driven/new-vue",
-            "data-driven/mounted",
-            "data-driven/render",
-            "data-driven/virtual-dom",
-            "data-driven/create-element",
-            "data-driven/update",
+            "/v2/data-driven/new-vue.md",
+            "/v2/data-driven/observe.md",
+            "/v2/data-driven/dep.md",
+            "/v2/data-driven/watcher.md",
           ],
+        },
+        {
+          text: "模版编译",
+          collapsable: false,
+          children: [
+            "/v2/compiler/index.md",
+            "/v2/compiler/compiler.md",
+            "/v2/compiler/parse.md",
+            "/v2/compiler/optimize.md",
+            "/v2/compiler/generate.md",
+          ],
+        },
+        {
+          text: "全局API",
+          collapsable: false,
+          children: ["/v2/global-api/index.md"],
         },
       ],
       "/v3/": [
