@@ -1,6 +1,6 @@
 # 观察者的原理
 
-<img :src="$withBase('/assets/data.png')" alt="">
+<img :src="$withBase('/assets/v2/data.png')" alt="">
  观察者的作用是用来触发视图重新渲染。
 
 ```js

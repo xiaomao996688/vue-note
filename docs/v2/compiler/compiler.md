@@ -2,19 +2,18 @@
 
 当我们使用 runtime-compiler 版本作为入口的时候。进行挂载时会先调用$mount 函数, 然后调用 mount 方法之后会进行 mountComponent 方法进行挂载。
 
+缓存挂载方法
+
 ```js
 const mount = Vue.prototype.$mount;
+```
+
+检测 render 方法是否存在，如果没有则需要去生成 render 方法。生成 render 方法需要 el 字符串或者 template 模版字符串。$mount 最终返回的是 vue 的实例。
+
+```js
 Vue.prototype.$mount = function (el, hydratingn) {
   el = el && query(el);
   /* istanbul ignore if */
-  if (el === document.body || el === document.documentElement) {
-    process.env.NODE_ENV !== "production" &&
-      warn(
-        `Do not mount Vue to <html> or <body> - mount to normal elements instead.`
-      );
-    return this;
-  }
-
   const options = this.$options;
   // resolve template/el and convert to render function
   if (!options.render) {
@@ -23,20 +22,10 @@ Vue.prototype.$mount = function (el, hydratingn) {
       if (typeof template === "string") {
         if (template.charAt(0) === "#") {
           template = idToTemplate(template);
-          /* istanbul ignore if */
-          if (process.env.NODE_ENV !== "production" && !template) {
-            warn(
-              `Template element not found or is empty: ${options.template}`,
-              this
-            );
-          }
         }
       } else if (template.nodeType) {
         template = template.innerHTML;
       } else {
-        if (process.env.NODE_ENV !== "production") {
-          warn("invalid template option:" + template, this);
-        }
         return this;
       }
     } else if (el) {
@@ -47,7 +36,6 @@ Vue.prototype.$mount = function (el, hydratingn) {
       if (process.env.NODE_ENV !== "production" && config.performance && mark) {
         mark("compile");
       }
-
       const { render, staticRenderFns } = compileToFunctions(
         template,
         {
@@ -61,12 +49,6 @@ Vue.prototype.$mount = function (el, hydratingn) {
       );
       options.render = render;
       options.staticRenderFns = staticRenderFns;
-
-      /* istanbul ignore if */
-      if (process.env.NODE_ENV !== "production" && config.performance && mark) {
-        mark("compile end");
-        measure(`vue ${this._name} compile`, "compile", "compile end");
-      }
     }
   }
   return mount.call(this, el, hydrating);
@@ -89,8 +71,6 @@ export function mountComponent(vm, el, hydrating) {
     updateComponent = () => {
       const name = vm._name;
       const id = vm._uid;
-      const startTag = `vue-perf-start:${id}`;
-      const endTag = `vue-perf-end:${id}`;
       const vnode = vm._render();
       vm._update(vnode, hydrating);
     };
@@ -99,10 +79,6 @@ export function mountComponent(vm, el, hydrating) {
       vm._update(vm._render(), hydrating);
     };
   }
-
-  // we set this to vm._watcher inside the watcher's constructor
-  // since the watcher's initial patch may call $forceUpdate (e.g. inside child
-  // component's mounted hook), which relies on vm._watcher being already defined
   new Watcher(
     vm,
     updateComponent,
@@ -117,9 +93,6 @@ export function mountComponent(vm, el, hydrating) {
     true /* isRenderWatcher */
   );
   hydrating = false;
-
-  // manually mounted instance, call mounted on self
-  // mounted is called for render-created child components in its inserted hook
   if (vm.$vnode == null) {
     vm._isMounted = true;
     callHook(vm, "mounted");
@@ -283,13 +256,7 @@ export function createCompileToFunctionFn(compile) {
         new Function("return 1");
       } catch (e) {
         if (e.toString().match(/unsafe-eval|CSP/)) {
-          warn(
-            "It seems you are using the standalone build of Vue.js in an " +
-              "environment with Content Security Policy that prohibits unsafe-eval. " +
-              "The template compiler cannot work in this environment. Consider " +
-              "relaxing the policy to allow unsafe-eval or pre-compiling your " +
-              "templates into render functions."
-          );
+          warn();
         }
       }
     }

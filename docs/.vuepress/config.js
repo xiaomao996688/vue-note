@@ -102,6 +102,11 @@ export default {
           ],
         },
         {
+          text: "虚拟DOM",
+          collapsable: false,
+          children: ["/v2/virtaul-dom/index.md", "/v2/virtaul-dom/diff.md"],
+        },
+        {
           text: "全局API",
           collapsable: false,
           children: ["/v2/global-api/index.md"],
