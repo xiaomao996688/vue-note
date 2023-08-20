@@ -1,1 +1,0 @@
-import{_ as t,o,c as i,a as e,b as a}from"./app-bac77e8c.js";const c={},s=e("h1",{id:"optimize",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#optimize","aria-hidden":"true"},"#"),a(" optimize")],-1),n=e("p",null,"进行中...",-1),r=[s,n];function _(d,l){return o(),i("div",null,r)}const m=t(c,[["render",_],["__file","optimize.html.vue"]]);export{m as default};

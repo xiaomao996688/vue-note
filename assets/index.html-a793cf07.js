@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-2644e5c2","path":"/v2/lifecycle/","title":"前言","lang":"en-US","frontmatter":{},"headers":[{"level":2,"title":"生命周期流图","slug":"生命周期流图","link":"#生命周期流图","children":[]},{"level":2,"title":"结论","slug":"结论","link":"#结论","children":[]}],"git":{"updatedTime":1690784465000},"filePathRelative":"v2/lifecycle/index.md"}');export{e as data};

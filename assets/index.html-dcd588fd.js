@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-049c1cf1","path":"/v2/virtaul-dom/","title":"Virtual DOM","lang":"en-US","frontmatter":{},"headers":[{"level":2,"title":"虚拟 DOM 的作用","slug":"虚拟-dom-的作用","link":"#虚拟-dom-的作用","children":[]},{"level":2,"title":"总结","slug":"总结","link":"#总结","children":[]}],"git":{"updatedTime":null},"filePathRelative":"v2/virtaul-dom/index.md"}');export{e as data};

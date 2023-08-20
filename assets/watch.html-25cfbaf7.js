@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-0f717c8f","path":"/v2/global-api/watch.html","title":"","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":null},"filePathRelative":"v2/global-api/watch.md"}');export{a as data};

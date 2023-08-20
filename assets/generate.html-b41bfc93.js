@@ -1,1 +1,0 @@
-import{_ as t,o as a,c as r,a as e,b as n}from"./app-bac77e8c.js";const c={},o=e("h1",{id:"generate",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#generate","aria-hidden":"true"},"#"),n(" generate")],-1),s=[o];function _(d,i){return a(),r("div",null,s)}const l=t(c,[["render",_],["__file","generate.html.vue"]]);export{l as default};

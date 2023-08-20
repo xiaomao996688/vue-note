@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-5f1d53a2","path":"/v2/data-driven/new-vue.html","title":"new Vue 对数据进行响应式","lang":"en-US","frontmatter":{},"headers":[{"level":2,"title":"总结","slug":"总结","link":"#总结","children":[]}],"git":{"updatedTime":1691845300000},"filePathRelative":"v2/data-driven/new-vue.md"}');export{e as data};

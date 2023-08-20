@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-4a03d516","path":"/v2/compiler/","title":"模版编译","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":null},"filePathRelative":"v2/compiler/index.md"}');export{e as data};
